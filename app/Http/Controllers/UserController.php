@@ -66,8 +66,9 @@ class UserController extends Controller
         ];
 
         $level = LevelModel::all(); // ambil data level untuk ditampilkan di form
+        $activeMenu = 'user'; // set menu yang sedang aktif
 
-        return view('user.create', ['breadcrumb' => $breadcrumb, 'page' => $page, 'level' => $level]);
+        return view('user.create', ['breadcrumb' => $breadcrumb, 'page' => $page, 'level' => $level, 'activeMenu' => $activeMenu]);
     }
 
     // Menyimpan data user baru
@@ -105,7 +106,9 @@ class UserController extends Controller
             'title' => 'Detail user'
         ];
 
-        return view('user.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'user' => $user]);
+        $activeMenu = 'user'; // set menu yang sedang aktif
+
+        return view('user.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'user' => $user, 'activeMenu' => $activeMenu]);
     }
 
     // Menampilkan halaman form edit user
@@ -123,7 +126,9 @@ class UserController extends Controller
             'title' => 'Edit user'
         ];
 
-        return view('user.edit', ['breadcrumb' => $breadcrumb, 'page' => $page, 'user' => $user, 'level' => $level]);
+        $activeMenu = 'user'; // set menu yang sedang aktif
+
+        return view('user.edit', ['breadcrumb' => $breadcrumb, 'page' => $page, 'user' => $user, 'level' => $level, 'activeMenu' => $activeMenu]);
     }
 
     // Menyimpan perubahan data user

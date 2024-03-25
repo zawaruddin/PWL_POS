@@ -19,7 +19,9 @@ class LevelController extends Controller
             'title' => 'Daftar Level/Group Pengguna yang terdaftar dalam sistem'
         ];
 
-        return view('level.index', ['breadcrumb' => $breadcrumb, 'page' => $page]);
+        $activeMenu = 'level'; // set menu yang sedang aktif
+
+        return view('level.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu]);
     }
 
     // Ambil data level dalam bentuk json untuk datatables
